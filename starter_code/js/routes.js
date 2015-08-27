@@ -12,4 +12,11 @@ function appRoutes($routeProvider) {
       controller: "BradyController",
       controllerAs: "bradyCtrl"
     })
-}
+    .when('/new',{
+      templateUrl: "js/templates/_new.html",
+      controller: "BradyController",
+      controllerAs: "bradyCtrl"
+    })
+    .otherwise('/');
+
+}//End appRoutes

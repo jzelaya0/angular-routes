@@ -8,7 +8,17 @@ var bradyDatabase = [
   {name: "Carol Brady", img:"img/carol.jpeg"}
 ];
 
-function BradyController(){
+//inject window
+BradyController.$inject = ['$window'];
+
+function BradyController($window){
   var self = this;
-  self.bradyBunch = bradyDatabase
-}
+  self.bradyBunch = bradyDatabase;
+  self.newBrady = {name: "", img: "img/"};
+
+  self.addBrady = function (){
+    console.log(self.newBrady);
+    bradyDatabase.push(self.newBrady)
+    $window.location.href = '/#/'
+  };//End addBrady
+}//End BradyController
