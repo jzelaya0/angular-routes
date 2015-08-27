@@ -1,3 +1,9 @@
-<div class="">
-  I am a template!!!
+<!-- _home.html -->
+<div class="content text-center">
+  <ul>
+    <li ng-repeat='brady in bradyCtrl.bradyBunch'>
+      {{brady.name}}<br>
+      <img ng-src="{{brady.img}}"/>
+    </li>
+  </ul>
 </div>
