@@ -17,6 +17,11 @@ function appRoutes($routeProvider) {
       controller: "BradyController",
       controllerAs: "bradyCtrl"
     })
+    .when('/brady/:id', {
+      templateUrl: 'js/templates/_profile.html',
+      controller: "BradyController",
+      controllerAs: "bradyCtrl"
+    })
     .otherwise('/');
 
 }//End appRoutes

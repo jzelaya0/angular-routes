@@ -9,16 +9,23 @@ var bradyDatabase = [
 ];
 
 //inject window
-BradyController.$inject = ['$window'];
+BradyController.$inject = ['$window','$routeParams'];
 
-function BradyController($window){
+function BradyController($window,$routeParams){
   var self = this;
   self.bradyBunch = bradyDatabase;
-  self.newBrady = {name: "", img: "img/"};
+  self.newBrady = {name: "", img: "img/"};//info being passed from _new.html
+  self.currentBrady = {};//info to be passed to _profile.html
 
   self.addBrady = function (){
     console.log(self.newBrady);
-    bradyDatabase.push(self.newBrady)
-    $window.location.href = '/#/'
+    bradyDatabase.push(self.newBrady);
+    $window.location.href = '/#/';
   };//End addBrady
+
+  self.bradyProfile = function() {
+    console.log($routeParams);
+    self.currentBrady = bradyDatabase[$routeParams.id];
+    console.log(self.currentBrady);
+  };//End bradyProfile
 }//End BradyController

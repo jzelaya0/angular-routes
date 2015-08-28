@@ -3,7 +3,8 @@
   <ul>
     <li ng-repeat='brady in bradyCtrl.bradyBunch'>
       {{brady.name}}<br>
-      <img ng-src="{{brady.img}}"/>
+      <img ng-src="{{brady.img}}"/><br>
+      <button class="btn btn-warning"><a href="/#/brady/{{$index}}">Profile</a></button>
     </li>
   </ul>
   <button class="btn btn-danger"><a href="/#/new">Add a new Brady!</a></button>
